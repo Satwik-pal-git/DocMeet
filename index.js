@@ -56,7 +56,7 @@ app.set("view engine", "ejs");
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use("https://doc-meet.vercel.app/", require("./routes/auth"));
+app.use("/", require("./routes/auth"));
 
 const PORT = process.env.PORT || 3000;
 
