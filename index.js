@@ -29,7 +29,7 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 const app = express();
-app.use(express.static("public"));
+app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //comment below line to avoid logs in console
@@ -56,7 +56,7 @@ app.set("view engine", "ejs");
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use("/", require("./routes/auth"));
+app.use("https://doc-meet.vercel.app/", require("./routes/auth"));
 
 const PORT = process.env.PORT || 3000;
 
