@@ -1,4 +1,5 @@
-# <a href="https://doc-meet.vercel.app/">Health Management and Appointment WebApp</a>
+# <a href="https://doc-meet.vercel.app/" target="_blank">Health Management and Appointment WebApp</a>
+
 
 clone the repo using
 ` git clone https://github.com/gunjan1909/Health-Management.git`
