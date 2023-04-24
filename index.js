@@ -29,7 +29,7 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 const app = express();
-app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname + "./public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //comment below line to avoid logs in console
