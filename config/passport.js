@@ -14,7 +14,7 @@ module.exports = function (passport) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "https://doc-meet.vercel.app/auth/google/callback",
+        callbackURL: "http://doc-meet-b7kz84eh2-satwik-pal-git.vercel.app/auth/google/callback",
       },
       async (accessToken, refreshToken, profile, done) => {
         const newUser = {
