@@ -4,20 +4,15 @@ const fetch = require("node-fetch");
 
 exports.getCalories = async (req, res) => {
     const foundUser = req.user;
-    res.render("calorie", { meals: foundUser.meals, sum: sum });
+    res.render("calorie", { meals: foundUser.meals });
 }
-
-var Food = [];
-var Calories = [];
 var food, times, calories;
-var sum = Number(0);
 
 exports.setCalories = async (req, res) => {
     food = req.body.Item;
     times = Number(req.body.times);
     // console.log(food, times);
     const URL = `https://api.edamam.com/api/food-database/v2/parser?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}&ingr=${food}`;
-    var qty;
     const Founduser = req.user;
     const user = await User.findById(Founduser.id);
 
@@ -25,14 +20,13 @@ exports.setCalories = async (req, res) => {
         fetch(URL)
             .then(response => response.json())
             .then(jsonData => {
-                calories = jsonData.parsed[0].food.nutrients.ENERC_KCAL;
-            }).then(async (data) => {
+                calories = times * jsonData.parsed[0].food.nutrients.ENERC_KCAL;
+            }).then(async () => {
                 var d = {
                     food,
                     calories,
                     times,
                 };
-                sum = sum + calories;
                 user.meals.push(d);
                 await user.save();
                 res.status(200).redirect("/calorie_tracker");

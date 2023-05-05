@@ -98,10 +98,6 @@
       </form>
       <!-- Calorie Count -->
 
-      <!-- <h3 class="center-align">Total Calories: <span class="total-calories">
-          <%=sum%>
-        </span></h3>
-      <br> -->
 
       <a href="#" class="center clear-btn btn blue" style="width: 200px; margin: 0 0 3vh 25vw;">Clear All</a>
 
@@ -157,7 +153,7 @@
       sum += +x.textContent
     }
     //console.log(sum)
-    const html = `<tr><td><b>Total Calories</b></td><td><strong style="color:red">${sum}</strong></td></tr>`
+    const html = `<tr><td><b>Total Calories (KCal) </b></td><td><strong style="color:red">${sum} KCal</strong></td></tr>`
     tableBody.insertAdjacentHTML("beforeend", html)
 
   </script>
