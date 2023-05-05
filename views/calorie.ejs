@@ -89,8 +89,8 @@
             <label for="item-name" class="modi" style="font-size: large; color: black;">Meal</label>
           </div>
           <div class="input-field col s6">
-            <input type="number" placeholder="Add Calories" id="item-calories" name="cal">
-            <label for="item-calories" style="font-size: large; color: black;">Calories</label>
+            <input type="number" placeholder="Add times/cups" id="item-calories" name="times">
+            <label for="item-calories" style="font-size: large; color: black;">Times</label>
           </div>
           <button type="submit" class="add-btn btn blue darken-3"><i class="fa fa-plus"></i> Add
             Meal</button>
@@ -111,6 +111,7 @@
           <tr class="text-center align-middle">
             <th scope="col" class="text-center align-middle" style="color: white;">Meal</th>
             <th scope="col" class="text-center align-middle" style="color: white;">Calories</th>
+            <th scope="col" class="text-center align-middle" style="color: white;">Times</th>
             <th scope="col" class="text-center align-middle" style="color: white;">Action</th>
           </tr>
         </thead>
@@ -123,6 +124,9 @@
                 </td>
                 <td>
                   <%=meals[i].calories%>
+                </td>
+                <td>
+                  <%=meals[i].times%>
                 </td>
                 <td><button type="button" value="Delete" class="delete" onclick="Delete(this)"><i
                       class="fas fa-trash"></i></button></td>
