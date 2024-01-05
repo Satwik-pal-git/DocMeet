@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const axios = require("axios");
 const fetch = require("node-fetch");
 
 exports.getCalories = async (req, res) => {

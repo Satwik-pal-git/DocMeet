@@ -22,11 +22,14 @@ dotenv.config({ path: "./config/config.env" });
 
 //connecting to database from ./config/db.js
 connectDB();
+
 const app = express();
+
 app.use(express.static(path.join(__dirname, "/public")));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-//comment below line to avoid logs in console
+
 app.use(morgan("dev"));
 
 app.use(
@@ -44,17 +47,15 @@ app.use(
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
 
-
-
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", require("./routes/auth"));
-app.use("/appointment", ensureAuth, appointmentRoute);
-app.use("/profile", ensureAuth, profileRoute);
 app.use("/dashboard", ensureAuth, dashboardRoute);
-app.use("/calorie_tracker", ensureAuth, calorieRoute);
+app.use("/appointment", ensureAuth, appointmentRoute);
 app.use("/disease", ensureAuth, diseaseRoute);
+app.use("/calorie_tracker", ensureAuth, calorieRoute);
+app.use("/profile", ensureAuth, profileRoute);
 app.use("/admin", adminRoute);
 
 

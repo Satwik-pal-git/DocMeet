@@ -26,15 +26,6 @@ exports.setProfile = async (request, response) => {
 
         if (user) {
             user.displayName = name;
-            // user.userDetails.mobile = mobile;
-            // user.userDetails.bg = bg;
-            // user.userDetails.address = address;
-            // user.userDetails.weight = weight;
-            // user.userDetails.height = height;
-            // user.userDetails.gen = gen;
-            // user.userDetails.BMI = BMI;
-            // user.userDetails.mail = mail;
-
             var d = {
                 weight,
                 height,
